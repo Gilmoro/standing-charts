@@ -1,57 +1,46 @@
 # Choir Standing Charts
 
-A web-based visualization tool for creating and managing choir formations with curved or straight risers.
+A web-based visualization tool for planning choir placements on risers with configurable geometry and per-row capacity.
 
-## Features
+## What's New
 
-- 🎵 **Curved Riser Layouts**: Visualize choir formations with realistic curved risers
-- 📏 **Center Straight Sections**: Optional straight center sections with curved outer parts
-- 👥 **Student Name Management**: Display student names instead of numbers
-- ⚙️ **Customizable Settings**: 
-  - Adjust number of risers (1-10)
-  - Set students per riser (1-30)
-  - Control curvature (0-100%)
-  - Configure straight section size
-- 🖱️ **Interactive Editing**: Click on any position to edit student names
-- 📱 **Responsive Design**: Works on desktop and mobile devices
+This version is tailored for choral risers and includes:
+
+- 🎼 **Layout modes**:
+  - Generic curved rows
+  - Straight rows
+  - Straight center with angled wings toward center
+- 🧱 **Variable row/step count** (1-12 rows)
+- 👥 **Variable people capacity by row**:
+  - Auto capacity from **modules per row × people per module**
+  - Optional comma-separated per-row override (example: `16,16,14,12`)
+- 🔢 **Assignment by number or by name**
+- 🪜 **Wenger Signature preset support** for known dimensions:
+  - 72" module width
+  - 18" step depth
+  - 8" rise
+  - default 4 people per 72" module (editable)
+
+## Wenger Signature note
+
+The Wenger product page is script-heavy and blocks some automated browser sessions (403), but published product imagery/spec graphics were reviewed and used for default geometry assumptions above.
 
 ## Usage
 
-1. Open `index.html` in a web browser
-2. Adjust the configuration settings:
-   - **Number of Risers**: Set how many risers your choir has
-   - **Students per Riser**: Set how many students are on each riser
-   - **Curvature**: Adjust the curve of the risers (0 = straight, 100 = maximum curve)
-   - **Center Straight Section**: Enable to have a straight center with curved sides
-   - **Straight Section Size**: When center straight section is enabled, control what percentage of the center is straight
-3. Click "Generate Sample Names" to populate with random names
-4. Click on any student position (either on the canvas or in the list) to edit their name
-5. Click "Clear Names" to remove all names
-
-## Screenshots
-
-### Default Curved Risers
-![Curved Risers](https://github.com/user-attachments/assets/c477e25a-8a36-41e9-9b7f-e254985b4724)
-
-### With Student Names
-![With Names](https://github.com/user-attachments/assets/2c843d9c-93ca-4b73-a4ee-9743c51e3d0b)
-
-### Center Straight Section
-![Center Straight](https://github.com/user-attachments/assets/f47e54db-b801-4565-b1f0-efb816df0b39)
+1. Open `index.html` in a browser.
+2. Choose a **Riser Preset** (`Custom`, `Wenger Signature 3-Step`, or `Wenger Signature 4-Step`).
+3. Set:
+   - **Number of Rows**
+   - **Layout Mode**
+   - **Assign By** (number or name)
+   - **Modules per Row**
+   - **People per Module**
+4. (Optional) Enter **People Per Row** as comma-separated values to override automatic capacity.
+5. Tune geometric sliders (`Curvature`, `Center Straight Section`, `Wing Angle`) as needed.
+6. Generate names, edit manually, or clear assignments.
 
 ## Files
 
-- `index.html`: Main HTML structure
-- `styles.css`: CSS styling and layout
-- `script.js`: JavaScript logic for visualization and interactivity
-
-## Browser Compatibility
-
-Works in all modern browsers that support HTML5 Canvas and ES6 JavaScript:
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-
-## License
-
-Open source - feel free to use and modify for your choir's needs!
+- `index.html` – controls and app structure
+- `styles.css` – visual styling and responsive layout
+- `script.js` – layout math, drawing, and assignment logic
